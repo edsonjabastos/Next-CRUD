@@ -16,7 +16,7 @@ export default function Layout(props: LayoutProps) {
         {props.titulo}
       </Titulo>
       <div
-      className='p-6'
+        className='p-6'
       >
         {props.children}
       </div>
