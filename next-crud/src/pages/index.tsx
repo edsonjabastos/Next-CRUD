@@ -1,6 +1,7 @@
 import Tabela from '../components/Tabela';
 import Cliente from '../core/Cliente'
 import Layout from '../components/Layout';
+import Botao from '../components/Botao';
 
 export default function Home() {
 
@@ -14,7 +15,7 @@ export default function Home() {
     console.log(cliente.nome)
   }
   function clienteExcluido(cliente: Cliente) {
-    console.log(cliente.nome)
+    console.log(`Excluir... ${cliente.nome}`)
   }
   return (
     <div className={`
@@ -23,6 +24,9 @@ export default function Home() {
     text-white
     `}>
       <Layout titulo='Cadastro Simples!'>
+        <div className="flex justify-end">
+        <Botao cor='green' className="mb-4">Novo Cliente!</Botao>
+        </div>
         <Tabela clientes={clientes}
           clienteSelecionado={clienteSelecionado}
           clienteExcluido={clienteExcluido}
