@@ -17,7 +17,7 @@ export default function Entrada(props: EntradaProps) {
         type={props.tipo ?? 'text'}
         value={props.valor}
         readOnly={props.somenteLeitura}
-        onChange={ e => props.valorMudou?.(e.target.value)}
+        onChange={e => props.valorMudou?.(e.target.value)}
         className={`
         border border-purple-500 rounded-lg
         focus:outline-none bg-gray-100 px-4 py2
