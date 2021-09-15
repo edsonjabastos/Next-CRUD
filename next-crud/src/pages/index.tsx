@@ -2,6 +2,7 @@ import Tabela from '../components/Tabela';
 import Cliente from '../core/Cliente'
 import Layout from '../components/Layout';
 import Botao from '../components/Botao';
+import Formulario from '../components/Formulario'
 
 export default function Home() {
 
@@ -31,6 +32,7 @@ export default function Home() {
           clienteSelecionado={clienteSelecionado}
           clienteExcluido={clienteExcluido}
         />
+        <Formulario cliente={clientes[0]}></Formulario>
       </Layout>
     </div>
   )
