@@ -1,6 +1,6 @@
-import firebase from '../config'
-import Cliente from '../../core/Cliente'
-import ClienteRepositorio from '../../core/ClienteRepositorio'
+import firebase from '../config';
+import Cliente from '../../core/Cliente';
+import ClienteRepositorio from '../../core/ClienteRepositorio';
 
 export default class ColecaoCliente implements ClienteRepositorio {
 
@@ -20,12 +20,12 @@ export default class ColecaoCliente implements ClienteRepositorio {
   async salvar(cliente: Cliente): Promise<Cliente> {
     if(cliente?.id) {
       await this.colecao().doc(cliente.id).set(cliente)
+      return cliente
     } else {
       const docRef = await this.colecao().add(cliente)
       const doc = await docRef.get()
       return doc.data()
     }
-    return null
   }
   async excluir(cliente: Cliente): Promise<void> {
     return this.colecao().doc(cliente.id).delete()
